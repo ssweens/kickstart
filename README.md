@@ -11,3 +11,13 @@ curl -fsSL https://raw.githubusercontent.com/ssweens/kickstart/main/pi-suite.sh 
 ```
 
 `pi-suite.sh` clones the private `pi-suite` repository over SSH and runs its installer. The extension manifest stays private; GitHub HTTPS package URLs are routed through SSH while Pi updates the extensions.
+
+## Install the global agent skills
+
+Requires Node.js, Git, and SSH access to `ssweens/pi-suite` and any private skill repositories in its manifest.
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/ssweens/kickstart/main/skills.sh | bash
+```
+
+`skills.sh` clones the private `pi-suite` repository over SSH and runs its skills installer, which installs each skill in `skills.json` with `npx skills add -g`.
